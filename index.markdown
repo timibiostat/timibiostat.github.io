@@ -9,5 +9,3 @@ This is the official website of the Thrombolysis in Myocardial Infarction (TIMI)
 
 
 
-The [topics](https://andreabellavia.github.io/main/posts/) page includes a series of posts related to specific topics of interest.
-

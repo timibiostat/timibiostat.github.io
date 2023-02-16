@@ -5,4 +5,4 @@ permalink: /presentations/
 ---
 
 
-- <a href="https://andreabellavia.github.io/RSA_Bellavia.pdf">Evaluating complex interactions in environmental and occupational epidemiology</a>, HSPH, December 2019
+- <a href="https://timi.org/wp-content/uploads/2023/02/Andrea-Bellavia-PhD-Evaluating-and-presenting-complex-interactions-in-clinical-research.pdf">Andrea Bellavia, PhD. Evaluating and presenting complex interactions in clinical research</a>, ASA Conference on Statistical Practice, February 2023

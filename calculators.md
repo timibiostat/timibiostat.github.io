@@ -1,5 +1,9 @@
 ---
 layout: page
 title: Calculators
-permalink: https://timibiostat.shinyapps.io/calculators/
+permalink: /calculators/
 ---
+
+[TIMI calculators](https://timibiostat.shinyapps.io/calculators/)
+
+will directly integrate link or embed page
