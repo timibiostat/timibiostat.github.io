@@ -22,7 +22,7 @@ title: TIMI Biostatistics
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
   This is the official website of the Thrombolysis in Myocardial Infarction (TIMI) Study Group Biostatistics team
-baseurl: "website" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  timibiostat
