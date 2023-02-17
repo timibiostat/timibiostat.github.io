@@ -4,7 +4,7 @@ title: Calculators
 permalink: /calculators/
 ---
 
-[TIMI calculators](https://timibiostat.shinyapps.io/calculators/)
+[TIMI calculators](https://timibiostat.shinyapps.io/calculators/){:target="_blank"} 
 
 
 
