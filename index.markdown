@@ -5,6 +5,6 @@
 layout: page
 ---
 
-This is the official website of the Thrombolysis in Myocardial Infarction (TIMI) Study Group Biostatistics team. test23
+This is the official website of the Thrombolysis in Myocardial Infarction (TIMI) Study Group Biostatistics team.
 
 
