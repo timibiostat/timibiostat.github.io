@@ -10,5 +10,4 @@ This is the official website of the Thrombolysis in Myocardial Infarction (TIMI)
 
 test2. add figure 
 
-{% include figure.html img="logo_timi.png" alt="intro image here" width="75%" %}
 
