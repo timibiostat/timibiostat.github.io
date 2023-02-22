@@ -8,6 +8,6 @@ layout: page
 This is the official website of the Thrombolysis in Myocardial Infarction (TIMI) Study Group Biostatistics team. test
 
 
-test2 
+test2. add figure 
 
-![](https://andreabellavia.github.io/logo_timi.png)
+![](https://timibiostat.github.io/logo_timi.png)
