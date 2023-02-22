@@ -1,9 +1,13 @@
 ---
 layout: page
-title: Presentations
-permalink: /presentations/
+title: Software and tutorials
+permalink: /tools/
 ---
 
-example:
+# R packages
 
-- Andrea Bellavia, PhD. <a href="https://timi.org/wp-content/uploads/2023/02/Andrea-Bellavia-PhD-Evaluating-and-presenting-complex-interactions-in-clinical-research.pdf" target="_blank">Evaluating and presenting complex interactions in clinical research</a>, ASA Conference on Statistical Practice, February 2023
+* [interactionRCS](https://cran.r-project.org/web/packages/interactionRCS/vignettes/vignette.html){:target="_blank"} 
+
+# SAS macros
+
+# Tutorials
