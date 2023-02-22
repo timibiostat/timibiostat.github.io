@@ -12,4 +12,4 @@ This is the official website of the Thrombolysis in Myocardial Infarction (TIMI)
 test2. add figure   fdb
 
 
-![](/timibiostat.github.io/docs/logo_timi.png)
+![](https://timibiostat.github.io/docs/logo_timi.png)
