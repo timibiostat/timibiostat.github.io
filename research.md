@@ -20,11 +20,11 @@ We are responsible for conducting all statistical analyses for research projects
 - Analysis of high-dimensional biomarkers ("omics" data) 
 - Genetics/Bioinformatics
 
-# Statistical research, education, and software development
+# Statistical research and software development
 
-let's make content for statisticians (software and tutorial) and for clinicians (calculators and presentations/bootcamp)
+The [Software and tutorials](https://timibiostat.github.io/tools/){:target="_blank"} page includes SAS and R code we have developed for different aspects of applied clinical research, together with some tutorials.  let's make content for statisticians (software and tutorial) and for clinicians (calculators and presentations/bootcamp)
 
-Here is a list of our team's publications and presentations. More details on software development and educational content on the [dedicated page][https://timibiostat.github.io/tools]
+Here is a list of our team's publications and presentations:
 
 - Andrea Bellavia, PhD. <a href="https://timi.org/wp-content/uploads/2023/02/Andrea-Bellavia-PhD-Evaluating-and-presenting-complex-interactions-in-clinical-research.pdf" target="_blank">Evaluating and presenting complex interactions in clinical research</a>, ASA Conference on Statistical Practice, February 2023
 

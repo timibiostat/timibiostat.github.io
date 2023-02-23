@@ -4,5 +4,5 @@ title: People
 permalink: /people/
 ---
 
-temp.
+<img src="https://timibiostat.github.io/docs/dinner.jpg">
 
