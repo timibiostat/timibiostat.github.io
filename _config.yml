@@ -34,7 +34,7 @@ plugins:
 
 header_pages:
 - research.md
-- software.md
+- papers.markdown
 - calculators.md
 - people.md
 # Exclude from processing.
