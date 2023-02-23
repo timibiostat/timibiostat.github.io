@@ -4,8 +4,11 @@ title: Calculators
 permalink: /calculators/
 ---
 
-link [TIMI calculators](https://timibiostat.shinyapps.io/calculators/){:target="_blank"} 
+# Calculators
 
-or embed..
+[TIMI calculators](https://timibiostat.shinyapps.io/calculators/){:target="_blank"} 
 
-<iframe width="100%" frameborder="no" src="https://timibiostat.shinyapps.io/calculators/"> </iframe>
+# Tutorials
+
+# Presentations/lectures
+

@@ -22,11 +22,11 @@ We are responsible for conducting all statistical analyses for research projects
 
 # Statistical research and software development
 
-The [Software and tutorials](https://timibiostat.github.io/tools/){:target="_blank"} page includes SAS and R code we have developed for different aspects of applied clinical research, together with some tutorials.  let's make content for statisticians (software and tutorial) and for clinicians (calculators and presentations/bootcamp)
+The [Software and tutorials](https://timibiostat.github.io/software/){:target="_blank"} page includes SAS and R code we have developed for different aspects of applied clinical research.
 
 Here is a list of our team's publications and presentations:
 
-- Andrea Bellavia, PhD. <a href="https://timi.org/wp-content/uploads/2023/02/Andrea-Bellavia-PhD-Evaluating-and-presenting-complex-interactions-in-clinical-research.pdf" target="_blank">Evaluating and presenting complex interactions in clinical research</a>, ASA Conference on Statistical Practice, February 2023
+-  <a href="https://timi.org/wp-content/uploads/2023/02/Andrea-Bellavia-PhD-Evaluating-and-presenting-complex-interactions-in-clinical-research.pdf" target="_blank">Evaluating and presenting complex interactions in clinical research</a>, Andrea Bellavia, PhD. ASA Conference on Statistical Practice, February 2023
 
 
 
