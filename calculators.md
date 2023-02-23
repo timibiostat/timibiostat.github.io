@@ -8,4 +8,4 @@ link [TIMI calculators](https://timibiostat.shinyapps.io/calculators/){:target="
 
 or embed..
 
-<iframe height="400" width="120%" frameborder="no" src="https://timibiostat.shinyapps.io/calculators/"> </iframe>
+<iframe width="100%" frameborder="no" src="https://timibiostat.shinyapps.io/calculators/"> </iframe>
