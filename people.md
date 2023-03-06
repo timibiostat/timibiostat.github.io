@@ -4,7 +4,7 @@ title: People
 permalink: /people/
 ---
 
-# Team members
+
 - name, photo, bio
 - name, photo, bio
 - ...
