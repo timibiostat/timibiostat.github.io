@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Biostatistics tools for clinicians
+title: Tools for clinicians
 permalink: /tools/
 ---
 
