@@ -10,7 +10,7 @@ Our team has developed and curates the webpage [TIMI calculators](https://timibi
 
 # Education
 
-Presentation and tutorials for clinical audience:
+Presentation and tutorials for clinicians:
 
 - ...
 - ...
