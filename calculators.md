@@ -1,15 +1,23 @@
 ---
 layout: page
-title: Calculators
-permalink: /calculators/
+title: Biostatistics tools for clinicians
+permalink: /tools/
 ---
 
 # Calculators
 
-[TIMI calculators](https://timibiostat.shinyapps.io/calculators/){:target="_blank"} 
+Our team has developed and curates the webpage [TIMI calculators](https://timibiostat.shinyapps.io/calculators/){:target="_blank"}, which provides interactive tools for the calculation of clinical risk scores 
 
-# Tutorials
+# Education
 
-# Presentations/lectures
+Presentation and tutorials for clinical audience:
+
+- ...
+- ...
 
 # Supplementary material and publication's webtools
+
+The following links direct to repositories and supplementary material related to TIMI study group's publications:
+
+- ...
+- ...

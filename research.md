@@ -28,5 +28,6 @@ Here is a list of our team's publications and presentations:
 
 -  <a href="https://timi.org/wp-content/uploads/2023/02/Andrea-Bellavia-PhD-Evaluating-and-presenting-complex-interactions-in-clinical-research.pdf" target="_blank">Evaluating and presenting complex interactions in clinical research</a>, Andrea Bellavia, PhD. ASA Conference on Statistical Practice, February 2023
 
+<a href="https://timibiostat.github.io/docs/Bellavia_CSP2023_final.pdf">Link to a test file</a>
 
 
