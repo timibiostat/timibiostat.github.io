@@ -29,7 +29,6 @@ github_username:  timibiostat
 
 # Build settings
 theme: minima
-  skin: dark
 
 plugins:
   - jekyll-feed
