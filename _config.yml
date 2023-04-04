@@ -29,6 +29,8 @@ github_username:  timibiostat
 
 # Build settings
 theme: minima
+  skin: dark
+  date_format: "%b %-d, %Y"
 plugins:
   - jekyll-feed
 
