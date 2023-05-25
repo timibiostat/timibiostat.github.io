@@ -7,11 +7,11 @@ layout: page
 
 This is the official website of the Biostatistics team of the [Thrombolysis in Myocardial Infarction (TIMI) Study Group](https://timi.org/){:target="_blank"}.
 
-TIMI Biostatistics is responsible for the design and analysis of research study from the TIMI Study Group. You can find detailed information on the different aspects of our research and work at the page [what we do](https://timibiostat.github.io/research/){:target="_blank"}.
+TIMI Biostatistics is responsible for the design and analysis of research study from the TIMI Study Group. You can find detailed information on the different aspects of our research and work at the page [what we do](https://timibiostat.github.io/research/).
 
-The page [tools for clinicians](https://timibiostat.github.io/tools/){:target="_blank"} includes a set of educational tools such as presentations on statistical topics and online risk scores calculators.
+The page [tools for clinicians](https://timibiostat.github.io/tools/) includes a set of educational tools such as presentations on statistical topics and online risk scores calculators.
 
-Material related to our research on biostatistical methods and software material, including SAS macros and R packages, can instead be found at the [Research](https://timibiostat.github.io/stats/){:target="_blank"} page.
+Material related to our research on biostatistical methods and software material, including SAS macros and R packages, can instead be found at the [Research](https://timibiostat.github.io/stats/) page.
 
 NEWS: 
 

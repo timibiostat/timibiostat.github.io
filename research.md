@@ -22,11 +22,11 @@ We are responsible for conducting all statistical analyses for research projects
 
 # Statistical research and software development
 
-See [Research and Software](https://timibiostat.github.io/stats/){:target="_blank"} page 
+See [Research and Software](https://timibiostat.github.io/stats/) page 
 
 # Statistical Education
 
-See [Tools for Clinicians](https://timibiostat.github.io/tools/){:target="_blank"} page 
+See [Tools for Clinicians](https://timibiostat.github.io/tools/) page 
 
 
 
