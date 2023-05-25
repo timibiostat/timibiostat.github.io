@@ -35,8 +35,8 @@ plugins:
 
 header_pages:
 - research.md
-- software.md
 - calculators.md
+- software.md
 - people.md
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Software
+title: Research and Software
 permalink: /software/
 ---
 
