@@ -10,7 +10,10 @@ permalink: /software/
 
 # Publications
 
-supplement here
+* Bellavia  et al. Estimating and presenting flexible interaction effects on the additive and multiplicative scale from a Cox model. - Under review 
+
+** <a href="https://timibiostat.github.io/docs/R_code.R" target="_blank">R code
+** <a href="https://timibiostat.github.io/docs/SAS_macros.txt" target="_blank">SAS macros
 
 # Presentations
 

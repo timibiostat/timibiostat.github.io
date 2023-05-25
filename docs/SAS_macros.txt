@@ -1,0 +1,378 @@
+/* ################################################################
+** "Estimating and presenting flexible interaction effects on the additive and multiplicative scale from a Cox model"
+** ----------------------------------------------------------------
+** macro PURPOSE: To create plot of absolute risk difference between smoker vs non-smoker over Age in Cox model.
+** ################################################################ */
+
+options nocenter compress=yes ls=180 ps=10000 nodate nonumber papersize="letter";
+
+
+*** ###########################################;
+%macro IntractRCS(indata=, tm2event=, censvar=, IntCatVar=, IntContVar=);
+
+*** ============================================;
+data _indat; set &indata.;
+
+  if &IntCatVar. eq . | &IntContVar. eq . then delete;
+
+  *** Endpoints;
+  tm2event = &tm2event.;
+  censvar = &censvar.;
+
+run;
+proc print data=_indat(obs=20); run;
+
+*** ---------------------------;
+proc univariate data=_indat;
+  var Age;
+  output out=descptD n=nv mean=meanv std=stdv median=medianv Q1=Q1v Q3=Q3v P1=P1v P5=P5v P95=P95v P95=P95v;
+run;
+proc print data=descptD; run;
+data _NULL_; set descptD;
+  call symput("xminv", P5v);
+  call symput("xmaxv", P95v);
+run;
+%put &xminv. &xmaxv.;
+
+
+*** ---------------------------;
+proc univariate data=_indat;
+  var &IntContVar.;
+  output out=descptD n=nv mean=meanv std=stdv median=medianv Q1=Q1v Q3=Q3v P1=P1v P99=P99v;
+run;
+proc print data=descptD; run;
+
+
+*** ================================;
+*** Covariate datasets for Cox model;
+proc sort data=_indat out=covartD(keep=&IntContVar.) nodupkey;
+  by &IntContVar.;
+run;
+data covartZD; set covartD;
+  do &IntCatVar. = 0 to 1;
+    output;
+  end;
+  format &IntCatVar. BEST12.;
+run;
+proc print data=covartZD(obs=100); run;
+proc contents data=covartZD; run;
+
+
+*** =====================================;
+%let ncsknots = 0.10 0.37 0.62 0.90;
+*** =====================================;
+
+*** =====================================;
+*** PROC PHREG ;
+proc phreg data=_indat;
+  class &IntCatVar.(ref='0') / param=ref ;
+  model tm2event*censvar(0) = &IntCatVar.|&IntContVar. ; 
+
+*  hazardratio predvar;
+
+  baseline out=bloutD covariates=covartZD timelist=1096.75  survival=survival stderr=stderr;  
+
+  ods output ParameterEstimates=prmestD;
+run;
+proc print data=prmestD(obs=100); run;
+proc print data=bloutD(obs=100); run;
+
+data estimAD; set bloutD;
+  Fail = 1 - Survival;
+run;
+proc print data=estimAD(obs=10); run;
+
+*** --------------------;
+data grp0D; set estimAD;
+  if &IntCatVar. eq 0;
+  rename survival=survival0 Fail=Fail0 stderr=stderr0;
+run;
+proc sort data=grp0D; by &IntContVar.; run;
+
+data grp1D; set estimAD;
+  if &IntCatVar. eq 1;
+  rename survival=survival1 Fail=Fail1 stderr=stderr1;
+run;
+proc sort data=grp0D; by &IntContVar.; run;
+
+*** ================================;
+data statsZD; merge grp0D grp1D; by &IntContVar.;
+
+  std_diff = sqrt(stderr0**2 + stderr1**2);
+  Fail_diff = Fail1 - Fail0;
+  Fail_diff_LCL = Fail_diff - 1.96 * std_diff;
+  Fail_diff_UCL = Fail_diff + 1.96 * std_diff;
+
+run;
+proc print data=statsZD(obs=10); run;
+
+
+
+
+*** #####################################################;
+*** PROC TEMPLATE procedure;
+*** #####################################################;
+proc template;
+  define statgraph curveplot;
+  beginGraph / border=FALSE; 
+    entrytitle "For MI/Ischemic stroke at 3 years" / textattrs=(family="arial" size=11pt);
+	layout lattice / border=FALSE rows=1 columns=1;
+      layout overlay / xaxisopts=(label=("&IntContVar.") 
+                          labelattrs=(family="arial" size=10 weight=bold) tickvalueattrs=(family="arial" size=9) griddisplay=on)
+                       yaxisopts=(label="Risk difference of current smoker vs non-Smoker"  
+					      /*linearopts=(viewmin=-0.3 viewmax=0.7)*/
+                          labelattrs=(family="arial" size=10 weight=bold) tickvalueattrs=(family="arial" size=9) griddisplay=on);
+
+		 bandplot x=&IntContVar. limitlower=Fail_diff_LCL limitupper=Fail_diff_UCL / fillattrs=(color=blue transparency=0.5);
+		 seriesplot x=&IntContVar. y=Fail_diff / lineattrs=(pattern=1 thickness=3 color=blue);
+
+      endlayout;
+	endlayout;
+  endGraph;
+  end;
+run;
+*** ------------------------------;
+
+*** =================================================;
+*** ODS Graphics;
+*** =================================================;
+options orientation=landscape;
+
+ods graphics on / reset height=600px width=840px outputfmt=png;
+ods escapechar='^';
+
+ods rtf file="" bodytitle;
+proc sgrender data=statsZD template=curveplot;
+  title;
+run;
+ods rtf close;
+
+ods graphics off;
+*** End of Graphics;
+
+
+%mend IntractRCS;
+*** ###########################################;
+
+
+*##########################;
+*##### END of PROGRAM #####;
+*##########################;
+
+
+###################################################################
+** macro PURPOSE: To create Spline plot of Absolute Risk Difference between Smoker vs Non-smoker over Age in Cox model with Spline effect of Age.
+** ################################################################ */
+
+
+*** ###########################################;
+%macro IntractRCS(indata=, tm2event=, censvar=, IntCatVar=, IntContVar=);
+
+*** ============================================;
+data _indat; set &indata.;
+
+  if &IntCatVar. eq . | &IntContVar. eq . then delete;
+
+  *** Endpoints;
+  tm2event = &tm2event.;
+  censvar = &censvar.;
+
+run;
+proc print data=_indat(obs=20); run;
+
+*** ---------------------------;
+proc univariate data=_indat;
+  var Age;
+  output out=descptD n=nv mean=meanv std=stdv median=medianv Q1=Q1v Q3=Q3v P1=P1v P5=P5v P95=P95v P95=P95v;
+run;
+proc print data=descptD; run;
+data _NULL_; set descptD;
+  call symput("xminv", P5v);
+  call symput("xmaxv", P95v);
+run;
+%put &xminv. &xmaxv.;
+
+
+*** ---------------------------;
+proc univariate data=_indat;
+  var &IntContVar.;
+  output out=descptD n=nv mean=meanv std=stdv median=medianv Q1=Q1v Q3=Q3v P1=P1v P99=P99v;
+run;
+proc print data=descptD; run;
+
+
+*** ================================;
+*** Covariate datasets for Cox model;
+proc sort data=_indat out=covartD(keep=&IntContVar.) nodupkey;
+  by &IntContVar.;
+run;
+data covartZD; set covartD;
+  do &IntCatVar. = 0 to 1;
+    output;
+  end;
+  format &IntCatVar. BEST12.;
+run;
+proc print data=covartZD(obs=100); run;
+proc contents data=covartZD; run;
+
+
+*** =====================================;
+%let ncsknots = 0.10 0.37 0.62 0.90;
+*** =====================================;
+
+*** =====================================;
+*** PROC PHREG ;
+proc phreg data=_indat;
+  class &IntCatVar.(ref='0') / param=ref ;
+  effect splxvar = spline(&IntContVar. / naturalcubic knotmethod=rangefractions(&ncsknots.));  
+  model tm2event*censvar(0) = &IntCatVar.|splxvar ; 
+
+  baseline out=bloutD covariates=covartZD timelist=1096.75  survival=survival stderr=stderr; 
+
+  ods output ParameterEstimates=prmestD;
+run;
+proc print data=prmestD(obs=100); run;
+proc print data=bloutD(obs=100); run;
+
+data estimAD; set bloutD;
+  Fail = 1 - Survival;
+run;
+proc print data=estimAD(obs=10); run;
+
+*** --------------------;
+data grp0D; set estimAD;
+  if &IntCatVar. eq 0;
+  rename survival=survival0 Fail=Fail0 stderr=stderr0;
+run;
+proc sort data=grp0D; by &IntContVar.; run;
+
+data grp1D; set estimAD;
+  if &IntCatVar. eq 1;
+  rename survival=survival1 Fail=Fail1 stderr=stderr1;
+run;
+proc sort data=grp0D; by &IntContVar.; run;
+
+*** ================================;
+data statsZD; merge grp0D grp1D; by &IntContVar.;
+
+  std_diff = sqrt(stderr0**2 + stderr1**2);
+  Fail_diff = Fail1 - Fail0;
+  Fail_diff_LCL = Fail_diff - 1.96 * std_diff;
+  Fail_diff_UCL = Fail_diff + 1.96 * std_diff;
+
+  nnt = 1 / Fail_diff;
+
+  if 50 <= &IntContVar. <= 70;   *** Inclusion of data to plot;
+run;
+proc print data=statsZD(obs=10); run;
+
+
+
+
+*** #####################################################;
+*** PROC TEMPLATE procedure;
+*** #####################################################;
+proc template;
+  define statgraph curveplot;
+  beginGraph / border=FALSE; 
+    entrytitle "For MI/Ischemic stroke at 3 years" / textattrs=(family="arial" size=11pt);
+*    entryfootnote halign=left "&footnote." / textattrs=(family="arial" size=8pt style=italic);
+	layout lattice / border=FALSE rows=1 columns=1;
+      layout overlay / xaxisopts=(label=("&IntContVar.") 
+                          labelattrs=(family="arial" size=10 weight=bold) tickvalueattrs=(family="arial" size=9) griddisplay=on)
+                       yaxisopts=(label="Risk difference of current smoker vs non-Smoker"  
+					      /*linearopts=(viewmin=-0.3 viewmax=0.7)*/
+                          labelattrs=(family="arial" size=10 weight=bold) tickvalueattrs=(family="arial" size=9) griddisplay=on);
+
+		 bandplot x=&IntContVar. limitlower=Fail_diff_LCL limitupper=Fail_diff_UCL / fillattrs=(color=blue transparency=0.5);
+		 seriesplot x=&IntContVar. y=Fail_diff / lineattrs=(pattern=1 thickness=3 color=blue);
+      endlayout;
+	endlayout;
+  endGraph;
+  end;
+run;
+*** ------------------------------;
+
+*** =================================================;
+*** ARD plot;
+*** =================================================;
+options orientation=landscape;
+
+ods graphics on / reset height=600px width=840px outputfmt=png;
+ods escapechar='^';
+
+ods rtf file="" bodytitle;
+proc sgrender data=statsZD template=curveplot;
+  title;
+run;
+ods rtf close;
+
+ods graphics off;
+*** End of Graphics;
+
+
+
+*** #####################################################;
+*** PROC TEMPLATE procedure;
+*** #####################################################;
+proc template;
+  define statgraph curveplot2;
+  beginGraph / border=FALSE; 
+    entrytitle "For MI/Ischemic stroke at 3 years" / textattrs=(family="arial" size=11pt);
+*    entryfootnote halign=left "&footnote." / textattrs=(family="arial" size=8pt style=italic);
+	layout lattice / border=FALSE rows=1 columns=1;
+      layout overlay / xaxisopts=(label=("&IntContVar.") 
+                          labelattrs=(family="arial" size=10 weight=bold) tickvalueattrs=(family="arial" size=9) griddisplay=on)
+                       yaxisopts=(label="NNT for current smoker vs non-Smoker"  
+					      /*linearopts=(viewmin=-0.3 viewmax=0.7)*/
+                          labelattrs=(family="arial" size=10 weight=bold) tickvalueattrs=(family="arial" size=9) griddisplay=on);
+
+		 seriesplot x=&IntContVar. y=nnt / lineattrs=(pattern=1 thickness=3 color=blue);
+      endlayout;
+	endlayout;
+  endGraph;
+  end;
+run;
+*** ------------------------------;
+
+*** =================================================;
+*** NNT plot;
+*** =================================================;
+options orientation=landscape;
+
+ods graphics on / reset height=600px width=840px outputfmt=png;
+ods escapechar='^';
+
+ods rtf file="" bodytitle;
+proc sgrender data=statsZD template=curveplot2;
+  title;
+run;
+ods rtf close;
+
+ods graphics off;
+*** End of Graphics;
+
+
+%mend IntractRCS;
+*** ###########################################;
+
+*** =======================================;
+%IntractRCS(indata=workZD, tm2event=days2miistr, censvar=miistrfu, IntCatVar=curr_smoke, IntContVar=Age);
+
+
+*##########################;
+*##### END of PROGRAM #####;
+*##########################;
+
+
+
+
+
+
+
+
+
+
+
+
+
