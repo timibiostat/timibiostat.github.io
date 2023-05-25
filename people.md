@@ -19,7 +19,7 @@ permalink: /people/
 - Xinhui Ran, MS - Biostatistician
 - Shuanglu Zhang, MPH – Biostatistician/Programmer
 
-
+<img width="50%" heigth="50%" src="https://timibiostat.github.io/docs/timistats.png">
 <img width="50%" heigth="50%" src="https://timibiostat.github.io/docs/dinner.jpg">
 
 # Past members
