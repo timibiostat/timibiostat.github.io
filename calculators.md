@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tools for clinicians
+title: Tools for Clinicians
 permalink: /tools/
 ---
 
