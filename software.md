@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research and Software
-permalink: /software/
+permalink: /stats/
 ---
 
 # Software development 
