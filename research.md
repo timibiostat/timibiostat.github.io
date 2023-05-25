@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 # Design of clinical trials in cardiovascular research 
-test
+
 Our team has many years of advanced expertise in the design and analysis of clinical trials (from phase II to IV) in cardiovascular research. You can find a comprehensive list of our current and past clinical trials [here](https://timi.org/clinical-trials/){:target="_blank"}.
 
 # Statistical analysis of clinical and epidemiologic studies
@@ -22,11 +22,11 @@ We are responsible for conducting all statistical analyses for research projects
 
 # Statistical research and software development
 
-The [Software and tutorials](https://timibiostat.github.io/software/){:target="_blank"} page includes SAS and R code we have developed for different aspects of applied clinical research.
+See [Research](https://timibiostat.github.io/software/){:target="_blank"} page 
 
-Here is a list of our team's publications and presentations:
+# Statistical Education
 
--  <a href="https://timibiostat.github.io/docs/Bellavia_CSP2023_final.pdf" target="_blank">Evaluating and presenting complex interactions in clinical research</a>, Andrea Bellavia, PhD. ASA Conference on Statistical Practice, February 2023
+See [Tools for clinicians](https://timibiostat.github.io/tools/){:target="_blank"} page 
 
 
 
