@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 # Design of clinical trials in cardiovascular research 
-
+test
 Our team has many years of advanced expertise in the design and analysis of clinical trials (from phase II to IV) in cardiovascular research. You can find a comprehensive list of our current and past clinical trials [here](https://timi.org/clinical-trials/){:target="_blank"}.
 
 # Statistical analysis of clinical and epidemiologic studies
