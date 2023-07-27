@@ -6,7 +6,7 @@ permalink: /stats/
 
 # Presentations
 
-* <a href="https://timibiostat.github.io/docs/JSM2023.pdf" target="_blank">Flexible Splines Modeling of Absolute Risks in Survival Analysis with R and SAS</a>, Michael G Palazzolo et al. Joint Statistical Meeting, July 2023
+* <a href="https://timibiostat.github.io/docs/JSM2023.pdf" target="_blank">Flexible Splines Modeling of Absolute Risks in Survival Analysis with R and SAS</a>, Michael G Palazzolo et al. Joint Statistical Meeting, August 2023
 
   + <a href="https://timibiostat.github.io/docs/JSM2023.zip" target="_blank">R and SAS material<br/><br/>
   

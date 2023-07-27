@@ -14,6 +14,7 @@ permalink: /people/
 - Jianping Guo, MS - Lead Biostatistician
 - Jeong-Gun Park, PhD - Lead Biostatistician
 - Fredrick Kinyua, PhD - Computational Biologist
+- Yi-Pin Lai, PhD - Computational Biologist
 - Giorgio EM Melloni, PhD - Computational Biologist
 - Michael G. Palazzolo, MS - Biostatistician
 - Xinhui Ran, MS - Biostatistician
